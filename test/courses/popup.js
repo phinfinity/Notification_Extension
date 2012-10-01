@@ -12,7 +12,6 @@ xhr.send();
 t = xhr.responseText;
 doc = $(t);
 vals = doc.find(".mainbox");
-content = document.getElementById("content");
 var retstr="<hr/>"
 for (i=0;i<vals.length;i++) {
 	var notification_string = summarize_text($($("font",vals[i])[0]).text());
@@ -21,7 +20,7 @@ for (i=0;i<vals.length;i++) {
 	var notification_link = 'http://courses.iiit.ac.in/EdgeNet/' + $('a',vals[i])[2].attributes.getNamedItem('href').textContent;
 	// Set above variables depending on context and leave below unchanged
 	if (notification_title != "")
-		notification_title += "- ";
+		notification_title += " - ";
 	//Sanitize strings
 	notification_string = $("<div/>").text(notification_string).html();
 	notification_title = $("<div/>").text(notification_title).html();
