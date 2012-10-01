@@ -50,7 +50,6 @@ for (i=0;i<vals.length;i++) {
 	// Set above variables depending on context and leave below unchanged
 	if (notification_title != "")
 		notification_title += "- ";
-
 	//Sanitize strings
 	notification_string = $("<div/>").text(notification_string).html();
 	notification_title = $("<div/>").text(notification_title).html();
