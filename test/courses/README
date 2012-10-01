@@ -1,0 +1,3 @@
+This is hacked up quick extension to test out data of notifications in raw format obtained from courses.
+This aims to get it from the home page (instead of rss which is simpler) more as a proof-of-concept to see structure of code so that it can be generalized for more websites
+

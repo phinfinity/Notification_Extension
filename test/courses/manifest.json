@@ -1,0 +1,16 @@
+{
+  "name": "Courses Portal Data",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Gets notifications from courses portal",
+  "background": { "scripts": ["jquery-1.8.2.min.js", "background.js"] },
+  "permissions": [
+    "tabs", "http://*/*"
+  ],
+  "browser_action": {
+      "default_title": "This is the Browser action title",
+      "default_icon": "icon.png",
+      "name": "Do something",
+      "default_popup":"popup.html"
+  }
+}
