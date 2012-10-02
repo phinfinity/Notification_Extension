@@ -24,14 +24,12 @@ var iframe = document.getElementById('theFrame');
 function loop() {
 	//Runs Loop every TIME_TO_REFRESH Milliseconds
 	// Main Fetching Loop goes here.
-	website_list = [
-	'function get_notifications(a,b){getpage("http://courses.iiit.ac.in/EdgeNet/home.php",function(c){doc=$(c);vals=doc.find(".mainbox");ret=[];for(i=0;i<vals.length;i++){ob=new Object;ob.summary=$($("font",vals[i])[0]).text();ob.img="http://courses.iiit.ac.in/EdgeNet/"+$("img",vals[i])[1].attributes.getNamedItem("src").textContent;ob.link="http://courses.iiit.ac.in/EdgeNet/"+$("a",vals[i])[2].attributes.getNamedItem("href").textContent;ob.site=a;ob.uid=ob.summary;var d=$($("font",vals[i])[0]).html();var e=d.match(/<br>(.*)/)[1];ob.time=Date.parse(e);ret.push(ob)}b(ret)})}'
-	];
+	website_list = JSON.parse(localStorage.getItem("websites"));
 	for (var i in website_list) {
 		iframe.contentWindow.postMessage({
 			'command' : 'execute',
-			'codestr' : website_list[i],
-			'site' : 'courses'
+			'codestr' : website_list[i].code,
+			'site' : website_list[i].site
 		}, '*');
 	}
 	setTimeout(loop, TIME_TO_REFRESH);
