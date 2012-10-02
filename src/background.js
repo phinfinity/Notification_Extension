@@ -1,6 +1,10 @@
 // This script will run on startup and will have  timer-loop running forever
 // Add background functions on top keep global constants on the very top of file
 
+var MAX_HISTORY = 30; // Max number of days to retain history
+var MAX_UNREAD_LIMIT = 20; // Max numb
+var MAX_READ_LIMIT = 20; // Max numb
+
 function sortfunc(a, b) {
 	if (a["time"] == b["time"])
 		return 0;
@@ -71,4 +75,15 @@ function setDismiss(uid, site) {
 			localStorage.setItem("old_uids", JSON.stringify(histdb));
 		}
 	}
+}
+
+function remHist() {
+	/* Function is called once every 24hrs.
+	 * It purges all dismissed notifications > MAX_HISTORY days
+	 * It purges all dismissed notifications for a given site older than first MAX_UNREAD_LIMIT.
+	 * It purges all nondismissed notiications for a given site older than first MAX_READ_LIMIT AND > MAX_HISTORY days
+	 */
+	histdb = JSON.parse(localStorage.getItem("old_uids"));
+	if(histdb == null){histdb = new Object};
+	siteobject = new Object() // Contains for each site , list of
 }
