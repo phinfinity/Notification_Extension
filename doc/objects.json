@@ -1,4 +1,6 @@
 //localstorage key : new_notifications
+//A list of JSON objects
+[
 {
 
 //1st one is a list containing all the non-dismissed notifications
@@ -10,10 +12,14 @@
 	"site": "courses", // SIte the notification is from , given in config
 	"link": "link to the notification entry" 
 	
-}
+},
+]
 //localstorage key : old_uids
+//An Assosciative array keyed on uid
 {
-	"uid" : "The unique identifier website,uid",
-	"time" : "123213213123", //seconds since epoch of fetching time
-	"dismissed" : "true" 
+	//Each uid is used as such for the key.
+	"uid" : {
+		"time" : "123213213123", //seconds since epoch of fetching time
+		"dismissed" : "true" 
+	}
 }
