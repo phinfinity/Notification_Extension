@@ -11,7 +11,7 @@
 	"link": "link to the notification entry" 
 	
 }
-//localstorage key : old_uuids
+//localstorage key : old_uids
 {
 	"uid" : "The unique identifier website,uid",
 	"time" : "123213213123", //seconds since epoch of fetching time
