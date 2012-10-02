@@ -1,0 +1,19 @@
+//localstorage key : new_notifications
+{
+
+//1st one is a list containing all the non-dismissed notifications
+	"uid" : "a unique identifier for the notification . May repeat across multiple sites",
+	"title": "Optional Title",
+	"summary": "Required description",
+	"time": "1234135", //seconds since epoch as given by website
+	"img": "http://example.com/img?=123", // Optional Link to image
+	"site": "courses", // SIte the notification is from , given in config
+	"link": "link to the notification entry" 
+	
+}
+//localstorage key : old_uuids
+{
+	"uid" : "The unique identifier website,uid",
+	"time" : "123213213123", //seconds since epoch of fetching time
+	"dismissed" : "true" 
+}
