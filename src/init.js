@@ -24,7 +24,9 @@ var iframe = document.getElementById('theFrame');
 function loop() {
 	//Runs Loop every TIME_TO_REFRESH Milliseconds
 	// Main Fetching Loop goes here.
-	website_list = ['function get_notifications(a,b){function c(a){var b=a.split(/\s{1,}/);var c=b[3].split(",")[1],d=b[3].split(",")[0];var e=parseInt(b[0].split(":")[0]),f=b[0].split(":")[1];if(b[1]=="pm"&&e<=12)e+=12;var g=new Object;g["Jan"]=1;g["Feb"]=2;g["Mar"]=3;g["Apr"]=4;g["May"]=5;g["Jun"]=6;g["Jul"]=7;g["Aug"]=8;g["Sep"]=9;g["Oct"]=10;g["Nov"]=11;g["Dec"]=12;var h=g[b[2]].toString();var i=new Date(c,h,d,e.toString(),f);return i.getTime()}getpage("http://courses.iiit.ac.in/EdgeNet/home.php",function(c){doc=$(c);vals=doc.find(".mainbox");ret=[];for(i=0;i<vals.length;i++){ob=new Object;ob.summary=$($("font",vals[i])[0]).text();ob.img="http://courses.iiit.ac.in/EdgeNet/"+$("img",vals[i])[1].attributes.getNamedItem("src").textContent;ob.link="http://courses.iiit.ac.in/EdgeNet/"+$("a",vals[i])[2].attributes.getNamedItem("href").textContent;ob.site=a;ob.uid=ob.summary;var d=$($("font",vals[i])[0]).html();var e=d.match(/<br>(.*)/)[1];ret.push(ob)}b(ret)})}'];
+	website_list = [
+	'function get_notifications(a,b){getpage("http://courses.iiit.ac.in/EdgeNet/home.php",function(c){doc=$(c);vals=doc.find(".mainbox");ret=[];for(i=0;i<vals.length;i++){ob=new Object;ob.summary=$($("font",vals[i])[0]).text();ob.img="http://courses.iiit.ac.in/EdgeNet/"+$("img",vals[i])[1].attributes.getNamedItem("src").textContent;ob.link="http://courses.iiit.ac.in/EdgeNet/"+$("a",vals[i])[2].attributes.getNamedItem("href").textContent;ob.site=a;ob.uid=ob.summary;var d=$($("font",vals[i])[0]).html();var e=d.match(/<br>(.*)/)[1];ob.time=Date.parse(e);ret.push(ob)}b(ret)})}'
+	];
 	for (var i in website_list) {
 		iframe.contentWindow.postMessage({
 			'command' : 'execute',

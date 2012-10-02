@@ -12,7 +12,6 @@ function get_notifications(site,callback) {
 			ob.uid = ob.summary;
 			var ht=$($("font",vals[i])[0]).html();
 			var date=ht.match(/<br>(.*)/)[1];
-			console.log(date);
 			ob.time = Date.parse(date);
 			ret.push(ob);
 		}
