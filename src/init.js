@@ -6,6 +6,12 @@ TIME_TO_CALL_REMHIST *= 1000;
 TIME_TO_REFRESH *= 1000;
 //convert to miliseconds
 
+
+chrome.browserAction.setBadgeBackgroundColor({
+	        color : [0, 200, 0, 100]
+});
+
+
 function init() {
 	var last_init_time = localStorage.getItem("last_init_time");
 	var curTime = (new Date().getTime());
@@ -32,6 +38,9 @@ function loop() {
 			'site' : website_list[i].site
 		}, '*');
 	}
+	chrome.browserAction.setBadgeText({
+		text: localStorage.getItem("notification_count")
+	});
 	setTimeout(loop, TIME_TO_REFRESH);
 }
 

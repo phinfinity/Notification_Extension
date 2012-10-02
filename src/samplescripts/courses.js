@@ -1,5 +1,4 @@
 function get_notifications(site,callback) {
-	return [];
 	getpage("http://courses.iiit.ac.in/EdgeNet/home.php", function(t) {
 		doc = $(t);
 		vals = doc.find(".mainbox");
