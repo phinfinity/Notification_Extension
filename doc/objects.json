@@ -18,7 +18,7 @@
 //An Assosciative array keyed on uid
 {
 	//Each uid is used as such for the key.
-	"uid" : {
+	"uid" : { // uid  = new_notifications.uid + new_notifications.site
 		"time" : "123213213123", //seconds since epoch of fetching time
 		"dismissed" : "true",
 		"site" : "sitename",
