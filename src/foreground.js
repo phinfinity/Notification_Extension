@@ -51,3 +51,15 @@ function getNotif(){
 	}
 	return notif_list
 }
+function setDismiss(uid, site) {
+	uidkey = uid + "#" + site;
+	histdb = JSON.parse(localStorage.getItem("old_uids"));
+	if (histdb != null) {
+		if (histdb.hasOwnProperty(uidkey)) {
+			histdb[uidkey].dismissed = true;
+			localStorage.setItem("old_uids", JSON.stringify(histdb));
+		}
+	}
+}
+
+

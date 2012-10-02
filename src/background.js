@@ -66,18 +66,6 @@ function addHist(uid, site) {
 	}
 
 }
-
-function setDismiss(uid, site) {
-	uidkey = uid + "#" + site;
-	histdb = JSON.parse(localStorage.getItem("old_uids"));
-	if (histdb != null) {
-		if (histdb.hasOwnProperty(uidkey)) {
-			histdb[uidkey].dismissed = true;
-			localStorage.setItem("old_uids", JSON.stringify(histdb));
-		}
-	}
-}
-
 function remHist() {
 	/* Function is called once every 24hrs.
 	 * It purges all dismissed notifications > MAX_HISTORY days
