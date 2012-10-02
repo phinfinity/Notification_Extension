@@ -1,10 +1,10 @@
 
 function getcur_accounts(){
 	var sitelist=JSON.parse(localStorage.websites);
-	var retstr="<table>";
-	for ( var i = 0 ; i < sitelist.length ; i++ ) 
-		retstr += "<tr> <td>  " + sitelist[i].site + "</td></tr>  "	
-			retstr += "</table>";
+	var retstr="";
+	if(sitelist!=null)
+		for ( var i = 0 ; i < sitelist.length ; i++ ) 
+			retstr += "<table border=\"0\"><tr> <td width=\"600\">  " + sitelist[i].site + "</td><td width=\"100\" class=\"DEL\"><a href=\"\" onclick=\"rem_account(\\\""+sitelist[i].siteid + "\\\"/></td></tr> </table> "	
 	document.getElementById("cur_accounts").innerHTML=retstr;
 }
 
