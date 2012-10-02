@@ -9,7 +9,6 @@ function sortfunc(a, b) {
 	return -1;
 
 }
-<<<<<<< HEAD
 function addNotif(notifObj){
 	/* Adds the notification Object to both the  
 	   new_notifications list and the old_notifications 
