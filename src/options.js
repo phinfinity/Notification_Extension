@@ -4,7 +4,7 @@ function getcur_accounts(){
 	var retstr="";
 	if(sitelist!=null)
 		for ( var i = 0 ; i < sitelist.length ; i++ ) 
-			retstr += "<table border=\"0\" class=\"cur_acc\"><tr> <td width=\"600\">  " + sitelist[i].site + "</td><td width=\"100\" class=\"DEL\"><a href=\"\" onclick=\"rem_account("+sitelist[i].siteid + ") /></td></tr> </table><br/>"	
+			retstr += "<table border=\"0\" class=\"cur_acc\"><tr> <td width=\"600\">  " + sitelist[i].site + "</td><td width=\"100\" class=\"DEL\"><a href=\"\" onclick=\"rem_account("+sitelist[i].siteid + ") >X</a></td></tr> </table><br/>"	
 	document.getElementById("cur_accounts").innerHTML=retstr;
 }
 
@@ -26,3 +26,4 @@ function add_account(site,script){
 				}));
 	getcur_accounts();
 }
+getcur_accounts();
