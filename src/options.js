@@ -26,4 +26,16 @@ function add_account(site,script){
 				}));
 	getcur_accounts();
 }
+function populate_form(){
+	form=document.getElementById("formid");
+	var inpsitename=document.createElement("sitename");
+	inpsitename.setAttribute("type","text");
+	inpsitename.setAttribute("name","site_name");
+	var sitescr=document.createElement("script");
+	sitescr.setAttribute("type","text");
+	sitescr.setAttribute("name","site_script");
+	form.innerHTML="";
+	form.appendChild(inpsitename);
+	form.appendChild(sitescr);
+}
 getcur_accounts();
