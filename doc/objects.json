@@ -24,6 +24,13 @@
 		"site" : "sitename",
 	}
 }
+//localstorage key : websites
+[
+	{
+		"site":"google.com",
+		"siteid": "123"
+	},
+]
 
 //localstorage key:last_init_time
 //To store the last time init is called
