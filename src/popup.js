@@ -6,6 +6,13 @@ function summarize_text(s){
 		return s;
 	}
 }
+function strip(html)
+{
+	var tmp = document.createElement("DIV");
+	tmp.innerHTML = html;
+	return tmp.textContent||tmp.innerText;
+}
+
 vals = getNotif();
 var retstr="<hr/>"
 for (i=0;i<vals.length;i++) {
@@ -13,14 +20,14 @@ for (i=0;i<vals.length;i++) {
 	var notification_title = vals[i].title;
 	var notification_image = vals[i].img;
 	var notification_link = vals[i].link
-	// Set above variables depending on context and leave below unchanged
-	if (!notification_title)
-		notification_title = "";
-	else
-		notification_title += " - ";
+		// Set above variables depending on context and leave below unchanged
+		if (!notification_title)
+			notification_title = "";
+		else
+			notification_title += " - ";
 	//Sanitize strings
-	notification_string = $(notification_string).text();
-	notification_title = $(notification_title).text();
+	notification_string = strip(notification_string);
+	notification_title = strip(notification_title);
 	//notification_image = $(notification_image).text();
 	//notification_link = $(notification_link).text();
 	notification_string = summarize_text(notification_string);
