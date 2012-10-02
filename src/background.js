@@ -28,7 +28,6 @@ function addNotif(notifObj) {
 	}
 	curnew_notifs.push(notifObj);
 	curnew_notifs.sort(sortfunc);
-
 	localStorage.setItem("notification_count", curnew_notifs.length);
 	localStorage.setItem("new_notifications", JSON.stringify(curnew_notifs));
 }

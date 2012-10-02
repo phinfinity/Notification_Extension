@@ -24,3 +24,6 @@
 		"site" : "sitename",
 	}
 }
+
+//localstorage key:last_init_time
+//To store the last time init is called
