@@ -27,6 +27,7 @@ for (i=0;i<vals.length;i++) {
 }
 retstr += "";
 document.getElementById("content").innerHTML=retstr;
+//remAll(); //Auto dismiss all force for now;
 $(".notification_entry").click(function(){
 	chrome.tabs.create({
 		url: $(this).find(".notification_link").text(),
