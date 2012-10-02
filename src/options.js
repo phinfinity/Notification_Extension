@@ -20,6 +20,8 @@ function getcur_accounts(){
 	if(sitelist!=null)
 		for ( var i = 0 ; i < sitelist.length ; i++ ) 
 			$("#"+sitelist[i].siteid).click(sitelist[i].siteid,rem_account)
+	form=document.getElementById("formid");
+	form.innerHTML="";
 }
 
 
@@ -47,17 +49,21 @@ function populate_form(){
 	var inpsitename=document.createElement("input");
 	inpsitename.setAttribute("type","text");
 	inpsitename.setAttribute("name","site_name");
-	var sitescr=document.createElement("input");
-	sitescr.setAttribute("type","text");
+	var sitescr=document.createElement("textarea");
 	sitescr.setAttribute("name","site_script");
+	sitescr.setAttribute("rows","20");
+	sitescr.setAttribute("cols","50");
 	var sub=document.createElement("button");
 	sub.setAttribute("type","button");
+	sub.textContent="Add";
 	sub.style.height=20;
 	sub.style.width=75;
 	sub.onclick=myonClick;
 	form.innerHTML="";
 	form.appendChild(inpsitename);
+	form.appendChild(document.createElement("br"));
 	form.appendChild(sitescr);
+	form.appendChild(document.createElement("br"));
 	form.appendChild(sub);
 
 }
