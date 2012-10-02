@@ -3,7 +3,7 @@
   "version": "1.0",
   "manifest_version": 2,
   "description": "A unified Central Notifications system",
-  "background": { "scripts": ["jquery-1.8.2.min.js", "foreground.js","background.js","init.js"] },
+  "background": { "page": "background.html" },
   "permissions": [
     "tabs", "http://*/*", "https://*/*"
   ],
@@ -12,5 +12,8 @@
       "default_icon": "icon.png",
       "name": "",
       "default_popup":"popup.html"
+  },
+  "sandbox": {
+	  "pages": ["sandbox.html"]
   }
 }
