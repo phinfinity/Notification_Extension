@@ -24,3 +24,10 @@
 		"site" : "sitename",
 	}
 }
+//localstorage key : websites
+[
+	{
+		"site":"google.com",
+		"siteid": "123"
+	},
+]
