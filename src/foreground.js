@@ -28,3 +28,15 @@ function remAll(site) {
 
 //remNotif("12341234","courses");
 //remAll("facebook");
+function getNotif(site) {
+	var new_notifications = JSON.parse(localStorage.getItem('new_notifications'));
+	if(new_notifications==null)
+		new_notifications=[]
+	var notif_list=[]
+	for ( i = 0; i < new_notifications.length ; i++ ) {
+		if ( new_notifications[i]["site"] == site ) {
+			notif_list.push(new_notifications[i]);
+		}
+	}
+	return notif_list
+}
