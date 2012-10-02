@@ -20,6 +20,25 @@ border: 1px solid #909090;
 	-moz-box-shadow:0px 0px 11px rgba(0, 0, 0, 0.8);
 	-o-box-shadow:0px 0px 11px rgba(0, 0, 0, 0.8);
 	-webkit-box-shadow:0px 0px 11px rgba(0, 0, 0, 0.8);
+	border-radius: 25px; /* Standard */
+	-o-border-radius: 25px; /* Opera 10.x */
+	-moz-border-radius: 25px; /* Mozilla/Firefox */
+	-icab-border-radius: 25px; /* iCab */
+	-khtml-border-radius: 25px; /* KHTML/Konqueror */
+	-webkit-border-radius: 25px; /* Webkit/Safari/Chrome/etcetera */
+
+}
+.add_acc
+{
+margin:0 auto 0;
+width: 20%;
+display:block;
+       background-color:#909090;
+border: 1px solid #707070;
+	box-shadow:0px 0px 11px rgba(0, 0, 0, 0.8);
+	-moz-box-shadow:0px 0px 11px rgba(0, 0, 0, 0.8);
+	-o-box-shadow:0px 0px 11px rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow:0px 0px 11px rgba(0, 0, 0, 0.8);
 
 	border-radius: 25px; /* Standard */
 	-o-border-radius: 25px; /* Opera 10.x */
@@ -29,6 +48,33 @@ border: 1px solid #909090;
 	-webkit-border-radius: 25px; /* Webkit/Safari/Chrome/etcetera */
 
 }
+td.ADD
+{
+padding:0;
+}
+td.ADD a,a:visited,a:link
+{
+padding:10px;
+text-decoration:none;
+display:block;
+text-color:#000000;
+color:#000000;
+font-size:100%;
+background-color=black;
+}
+
+td.ADD a:hover
+{
+padding:10px;
+text-decoration:none;
+display:block;
+text-color:#444444;
+color:#444444;
+font-size:100%;
+background-color=black;
+}
+
+
 tr
 {
 height:40
