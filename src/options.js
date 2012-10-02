@@ -35,7 +35,8 @@ function add_account(site,script){
 		websites=[]
 	websites.push({
 			"site" : site,
-			"siteid" : text
+			"siteid" : text,
+			"code" : script
 			});
 	localStorage.setItem("websites",JSON.stringify(websites));
 	getcur_accounts();
