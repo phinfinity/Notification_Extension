@@ -26,13 +26,6 @@ function addNotif(notifObj){
 
 	localStorage.setItem("notification_count", curnew_notifs.length);
 	localStorage.setItem("new_notifications", JSON.stringify(curnew_notifs));
-	//updating localStorage
-	old_notifs = JSON.parse(localStorage.getItem("old_uids"));
-	if (old_notifs == null){
-		old_notifs = {};
-	}
-	old_notifs[notifObj.uid] = "{\"time\" : \"" + notifObj.time.toString() + "\" , \"dismissed\" : \"" + false + "\"}";
-	localStorage.setItem("old_uids", JSON.stringify(old_notifs))
 }
 /*
 function addNotif_test(){
