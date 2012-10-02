@@ -41,3 +41,13 @@ function getNotif(site) {
 	}
 	return notif_list
 }
+function getNotif(){
+	var new_notifications = JSON.parse(localStorage.getItem('new_notifications'));
+	if(new_notifications==null)
+		new_notifications=[]
+	var notif_list=[]
+	for ( i = 0; i < new_notifications.length ; i++ ) {
+		notif_list.push(new_notifications[i]);
+	}
+	return notif_list
+}
