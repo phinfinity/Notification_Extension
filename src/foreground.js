@@ -2,7 +2,7 @@
 function remNotif(uid, site) {
 	var new_notifications = localStorage.getItem('new_notifications');
 	if (new_notifications == null)
-		return;
+		new_notifications="[]";
 	new_notifications = JSON.parse(new_notifications);
 	for ( i = 0; i < new_notifications.length; i++) {
 		if (new_notifications[i]["uid"] == uid && new_notifications[i]["site"] == site) {
@@ -16,6 +16,7 @@ function remNotif(uid, site) {
 function remAll(site) {
 	var new_notifications = localStorage.getItem('new_notifications');
 	if (new_notifications == null)
+		new_notifications="[]";
 	new_notifications = JSON.parse(new_notifications);
 	for ( i = 0; i < new_notifications.length; i++) {
 		if (new_notifications[i]["site"] == site) {
