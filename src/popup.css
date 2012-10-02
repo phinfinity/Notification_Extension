@@ -1,0 +1,16 @@
+hr{
+	margin: 0;
+	clear: both;
+}
+.notification_entry{
+	margin: 0;
+	clear: both;
+	cursor: pointer;
+}
+.notification_image{
+	width: 50px;
+	height: 50px;
+}
+.notification_link{
+	display: none;
+}
