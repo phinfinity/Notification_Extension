@@ -4,7 +4,7 @@ callback_container.nextid = 1;
 function getpage(url, callback) {
 	rid = callback_container.nextid;
 	callback_container.nextid++;
-	callback_container	[rid] = callback;
+	callback_container[rid] = callback;
 	last_event.source.postMessage({
 		"type" : "fetchGET",
 		"payload" : url,

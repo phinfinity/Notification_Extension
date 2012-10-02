@@ -44,7 +44,7 @@ window.addEventListener('message', function(event) {
 			if (ob.uid == "" || ob.uid == undefined) {
 				ob.uid = ob.summary;
 			}
-			if(addHist(ob.uid, ob.site)) {
+			if (addHist(ob.uid, ob.site)) {
 				addNotif(ob);
 			}
 		}
@@ -52,15 +52,20 @@ window.addEventListener('message', function(event) {
 		url = l.payload;
 		rid = l.rid;
 		xhr = new XMLHttpRequest();
-		xhr.open("GET", url, false);
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				val = xhr.responseText;
+				event.source.postMessage({
+					"command" : "response",
+					"rid" : rid,
+					"payload" : val
+				}, '*');
+			}
+		}
+		xhr.open("GET", url, true);
 		xhr.send();
-		val = xhr.responseText;
-		event.source.postMessage({
-			"command": "response",
-			"rid" : rid,
-			"payload" : val
-		}, '*');
 	}
 });
 
-setTimeout(loop, 1*1000); // wait 2 seconds to settle down before running
+setTimeout(loop, 1 * 1000);
+// wait 2 seconds to settle down before running
