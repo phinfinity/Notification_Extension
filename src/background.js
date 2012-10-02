@@ -10,6 +10,9 @@ function sortfunc(a,b){
 
 }
 function addNotif(notifObj){
+	/* Adds the notification Object to both the  
+	   new_notifications list and the old_notifications 
+	   list*/
 	curnew_notifs=JSON.parse(localStorage.getItem("new_notifications"));		//get string from localStorage
 	if(curnew_notifs==null)
 		curnew_notifs=[]
