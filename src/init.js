@@ -38,8 +38,12 @@ function loop() {
 			'site' : website_list[i].site
 		}, '*');
 	}
+	notification_count = localStorage.getItem("notification_count");
+	if(!notification_count)
+		notification_count = 0;
+	notification_count = String(notification_count);
 	chrome.browserAction.setBadgeText({
-		text: localStorage.getItem("notification_count")
+		text: notification_count
 	});
 	setTimeout(loop, TIME_TO_REFRESH);
 }
